@@ -3,7 +3,9 @@ var http = require("http");
 var app = express();
 var bodyParser = require("body-parser");
 var server = http.createServer(app);
-server.listen(80);
+server.listen(80, () => {
+  console.log("시작");
+});
 app.use(express.static(__dirname + "/web"));
 app.use(bodyParser.json());
 app.get("/", function (req, res) {
